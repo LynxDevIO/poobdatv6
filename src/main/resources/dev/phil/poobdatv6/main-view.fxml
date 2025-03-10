@@ -1,16 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="dev.phil.poobdatv6.controller.MainController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.phil.poobdatv6.controller.MainController">
+   <children>
+      <MenuBar />
+      <TabPane prefHeight="274.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Cadastrar Cliente">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="237.0" prefWidth="400.0">
+                     <children>
+                        <TextField fx:id="cadastroNomeCliente" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="371.0" promptText="nome completo" />
+                        <TextField fx:id="cadastroCPFCliente" layoutX="14.0" layoutY="79.0" promptText="CPF" />
+                        <TextField fx:id="cadastroLogradouroCliente" layoutX="14.0" layoutY="113.0" promptText="logradouro" />
+                        <DatePicker fx:id="cadastroDataDeNascimentoCliente" layoutX="200.0" layoutY="79.0" promptText="data de nascimento" />
+                        <ComboBox fx:id="cadastroCidadeCliente" layoutX="14.0" layoutY="150.0" prefHeight="26.0" prefWidth="160.0" promptText="cidade" />
+                        <ComboBox fx:id="cadastroEstadoCliente" layoutX="200.0" layoutY="151.0" prefHeight="26.0" prefWidth="186.0" promptText="estado" />
+                        <Button fx:id="cadastroCadastrarCliente" layoutX="144.0" layoutY="203.0" mnemonicParsing="false" onAction="#onActionCadastrarCliente" text="Cadastrar Cliente" />
+                        <TextField fx:id="cadastroBairroCliente" layoutX="200.0" layoutY="114.0" prefHeight="26.0" prefWidth="185.0" promptText="bairro" />
+                        <TextField fx:id="cadastroEmailCliente" layoutX="14.0" layoutY="47.0" prefHeight="26.0" prefWidth="371.0" promptText="email" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Registrar Venda">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="400.0">
+                     <children>
+                        <TextField fx:id="venda_id_cliente" layoutX="16.0" layoutY="15.0" prefHeight="26.0" prefWidth="100.0" promptText="ID clienteVenda" />
+                        <Label fx:id="venda_nome_do_cliente" layoutX="123.0" layoutY="19.0" prefHeight="17.0" prefWidth="260.0" text="nome_do_cliente_venda" />
+                        <Button fx:id="venda_registrar_venda" layoutX="148.0" layoutY="209.0" mnemonicParsing="false" onAction="#registerSale" text="Registrar Venda" />
+                        <ComboBox fx:id="venda_produtos" layoutX="16.0" layoutY="50.0" prefHeight="26.0" prefWidth="250.0" promptText="Produto" />
+                        <Button fx:id="venda_produto_inserir" layoutX="358.0" layoutY="50.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="24.0" text="+" />
+                        <Spinner fx:id="venda_produto_quantidade" editable="true" layoutX="277.0" layoutY="51.0" prefHeight="26.0" prefWidth="69.0" />
+                        <TableView fx:id="venda_tabela_produtos" layoutX="16.0" layoutY="85.0" prefHeight="121.0" prefWidth="368.0">
+                          <columns>
+                            <TableColumn fx:id="venda_tabela_produto" prefWidth="299.0" text="produto" />
+                            <TableColumn fx:id="venda_tabela_quantidade" prefWidth="68.0" text="quantidade" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Ferramentas">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="109.0" layoutY="19.0" prefHeight="17.0" prefWidth="39.0" style="-fx-font-weight: BOLD;" text="Nome: " />
+                        <Label layoutX="14.0" layoutY="49.0" style="-fx-font-weight: BOLD;" text="Último Produto Comprado:" />
+                        <ComboBox fx:id="ferramentas_id_cliente" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="87.0" promptText="Cliente" />
+                        <Label fx:id="nome_do_cliente_ferramentas" layoutX="154.0" layoutY="19.0" prefHeight="17.0" prefWidth="230.0" text="nome_do_cliente_ferramentas" />
+                        <Label fx:id="ultimo_produto_comprado" layoutX="164.0" layoutY="49.0" prefHeight="17.0" prefWidth="222.0" text="ultimo_produto_comprado" />
+                        <Label layoutX="14.0" layoutY="78.0" style="-fx-font-weight: BOLD;" text="Produtos Preferidos" />
+                        <TableView fx:id="ferramentas_tabela_quantidade" layoutX="14.0" layoutY="103.0" prefHeight="126.0" prefWidth="368.0">
+                          <columns>
+                            <TableColumn fx:id="ferramentas_tabela_produto" prefWidth="297.0" text="produto" />
+                            <TableColumn minWidth="0.0" prefWidth="70.0" text="quantidade" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TabPane>
+      <Label fx:id="statusConexaoBD" prefHeight="24.0" prefWidth="368.0" text="status_conexao_bd">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
 </VBox>
