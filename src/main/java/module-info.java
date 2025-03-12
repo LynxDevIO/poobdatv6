@@ -9,8 +9,8 @@ module dev.phil.poobdatv6 {
     exports dev.phil.poobdatv6;
     exports dev.phil.poobdatv6.controller;
     opens dev.phil.poobdatv6.controller to javafx.fxml;
-    exports view;
-    opens view to javafx.fxml;
+    exports dev.phil.poobdatv6.view;
+    opens dev.phil.poobdatv6.view to javafx.fxml;
     
     // Abrir o pacote model para o JavaFX
     exports dev.phil.poobdatv6.model;

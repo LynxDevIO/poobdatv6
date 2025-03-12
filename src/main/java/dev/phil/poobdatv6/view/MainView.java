@@ -1,4 +1,4 @@
-package view;
+package dev.phil.poobdatv6.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

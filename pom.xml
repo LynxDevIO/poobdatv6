@@ -65,7 +65,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <idVenda>default-cli</idVenda>
                         <configuration>
-                            <mainClass>dev.phil.poobdatv6/view.MainView</mainClass>
+                            <mainClass>dev.phil.poobdatv6/dev.phil.poobdatv6.view.MainView</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

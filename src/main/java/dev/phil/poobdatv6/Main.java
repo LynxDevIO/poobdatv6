@@ -1,7 +1,7 @@
 package dev.phil.poobdatv6;
 
 import dev.phil.poobdatv6.database.DBConnection;
-import view.MainView;
+import dev.phil.poobdatv6.view.MainView;
 
 import java.sql.SQLException;
 
